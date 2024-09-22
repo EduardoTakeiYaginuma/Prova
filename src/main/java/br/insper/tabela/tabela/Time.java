@@ -1,4 +1,4 @@
-package jogadorTipoProva.demo;
+package br.insper.tabela.tabela;
 
 
 import lombok.Getter;
