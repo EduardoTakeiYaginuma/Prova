@@ -16,10 +16,16 @@ public class JogadorService {
     private JogadorRepository jogadorRepository;
 
     public void salvarJogador(Jogador jogador) {
-        if (jogador.getNome() == null || jogador.getNome().isEmpty()) {
+        if (jogador.getNome() == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Nome inválido");
         }
-        if (jogador.getIdade() == null || jogador.getIdade() < 0) {
+        if (jogador.getNome().isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Nome inválido");
+        }
+        if (jogador.getIdade() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Idade inválida");
+        }
+        if (jogador.getIdade() < 0) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Idade inválida");
         }
         if (jogador.getTimes().isEmpty()){
