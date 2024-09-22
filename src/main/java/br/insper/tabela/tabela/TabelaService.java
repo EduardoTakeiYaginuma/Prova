@@ -15,21 +15,22 @@ public class TabelaService {
     private PartidaService partidaService;
 
     public List<TabelaDTO> getTabela() {
-
-        List<RetornarPartidaDTO> partidas = partidaService.getPartidas();
-
-        Map<String, TabelaDTO> tabela = new HashMap<>();
-
-        for (RetornarPartidaDTO partida : partidas) {
-            if (partida.getStatus().equals("REALIZADA")) {
-                processarTime(tabela, partida.getNomeMandante(), partida.getPlacarMandante(), partida.getPlacarVisitante());
-                processarTime(tabela, partida.getNomeVisitante(), partida.getPlacarVisitante(), partida.getPlacarMandante());
-            }
-        }
-
-        return new ArrayList<>(tabela.values()).stream()
-                .sorted(Comparator.comparing(TabelaDTO::getPontos).reversed())
-                .collect(Collectors.toList());
+        List<TabelaDTO> a = new ArrayList<>();
+        return a;
+//        List<RetornarPartidaDTO> partidas = partidaService.getPartidas();
+//
+//        Map<String, TabelaDTO> tabela = new HashMap<>();
+//
+//        for (RetornarPartidaDTO partida : partidas) {
+//            if (partida.getStatus().equals("REALIZADA")) {
+//                processarTime(tabela, partida.getNomeMandante(), partida.getPlacarMandante(), partida.getPlacarVisitante());
+//                processarTime(tabela, partida.getNomeVisitante(), partida.getPlacarVisitante(), partida.getPlacarMandante());
+//            }
+//        }
+//
+//        return new ArrayList<>(tabela.values()).stream()
+//                .sorted(Comparator.comparing(TabelaDTO::getPontos).reversed())
+//                .collect(Collectors.toList());
     }
 
     private void processarTime(Map<String, TabelaDTO> tabela, String time, int golsPro, int golsContra) {
