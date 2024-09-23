@@ -17,7 +17,7 @@ public class ProjetoController {
     }
 
     @GetMapping
-    public List<Projeto> listarProjetos(@RequestParam String status) {
+    public List<Projeto> listarProjetos(@RequestParam(required = false) String status) {
         return projetoService.listarProjetos(status);
     }
 
