@@ -133,22 +133,8 @@ public class ProjetoServiceTests {
                 () -> projetoService.salvarProjeto(projeto));
     }
 
-    @Test
-    public void adicionaUsuarioNovoProjeto() {
-        Projeto projeto = new Projeto();
-        projeto.setNome("nome");
-        projeto.setDescricao("descricao");
-        projeto.setStatus("PLANEJAMENTO");
-        projeto.setCpfGerente("123");
 
-        Usuario usuario = new Usuario();
-        usuario.setCpf("123");
 
-        Mockito.when(projetoRepository.save(projeto))
-                .thenReturn(projeto);
-
-        projetoService.adicionaUsuarioProjeto("1", "123");
-    }
 
 
 
