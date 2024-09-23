@@ -42,6 +42,7 @@ public class ProjetoService {
 
     }
 
+
     public List<Projeto> listarProjetos(String status) {
         if (status.equals("PLANEJAMENTO") || status.equals("EXECUCAO") || status.equals("FINALIZADO")) {
             return projetoRepository.findByStatus(status);
