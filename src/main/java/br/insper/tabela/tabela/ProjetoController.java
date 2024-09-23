@@ -16,13 +16,13 @@ public class ProjetoController {
         projetoService.salvarProjeto(projeto);
     }
 
-    @GetMapping("/{status}")
-    public List<Projeto> listarProjetos(@PathVariable String status) {
+    @GetMapping
+    public List<Projeto> listarProjetos(@RequestParam String status) {
         return projetoService.listarProjetos(status);
     }
 
     @PostMapping("/adicionaUsuario/{id_projeto}/{cpf}")
-    public void adicionaJogadorTime(@PathVariable String id_projeto, @PathVariable String cpf) {
+    public void adicionaUsuarioProjeto(@PathVariable String id_projeto, @PathVariable String cpf) {
         projetoService.adicionaUsuarioProjeto(id_projeto, cpf);
     }
 
